@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css?family=Bangers');
+@import url('https://fonts.googleapis.com/css?family=Raleway:700');
+
+/*
+  CSS variables are defined in the base.pug template file.
+  That way they apply globally
+*/
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#root {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: visible;
+  white-space: nowrap;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
+
+.animated {
+  transition: transform 1s ease-in-out;
+}
+
+.no-cursor {
+  cursor: none !important;
+}
+
+.frame {
+  position: absolute;
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border: none;
+}
+
+#slider {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgb(var(--main-fg-color));
+  z-index: 2;
+  transition: transform 1s linear;
+}
+
+#slider.disconnected {
+  background: rgb(var(--error-bg-color));
+}
+
+#buttons {
+  position: fixed;
+  display: flex;
+  right: 0;
+  bottom: 0;
+  height: 40px;
+  width: 120px;
+  border-radius: 10px;
+  border-bottom-right-radius: 0;
+  background: rgb(var(--main-bg-color));
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  transform: translate(110px, 30px);
+  transition: transform 300ms ease-in-out;
+  z-index: 3;
+}
+
+#buttons:hover {
+  transform: translate(0px, 0px);
+}
+
+.btn {
+  display: inline-flex;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  flex-shrink: 0;
+  flex-grow: 1;
+  border-radius: 10px;
+  color: rgb(var(--main-fg-color));
+  align-items: center;
+  justify-content: center;
+}
+
+#pauseBtn {
+  font-size: 14px;
+}
+
+#leftBtn {
+  font-size: 20px;
+}
+
+#rightBtn {
+  font-size: 20px;
+}
+
+.btn:hover {
+  background-color: rgba(var(--main-accent-color), 0.05);
+}
+
+.btn:active {
+  background-color: rgba(var(--main-accent-color), 0.1);
+}
+
+#blahRoot {
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.blahElement {
+  position: relative;
+  color: rgb(var(--main-bg-color));
+  font-size: 100px;
+  font-family: 'Bangers', cursive;
+  text-shadow: 5px 5px rgb(var(--main-fg-color));
+  margin: 10px;
+}
+
+.blahElement.img {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 0;
+}
+
+#serviceVersion {
+  position: fixed;
+  bottom: 2px;
+  right: 17px;
+  font-weight: 700;
+  color: rgba(var(--main-dark-accent-color), 0.2);
+  font-size: 10px;
+  font-family: 'Raleway', sans-serif;
+}

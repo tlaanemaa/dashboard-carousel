@@ -1,0 +1,42 @@
+extends base.pug
+
+block header
+  title #{name.charAt(0).toUpperCase() + name.slice(1)} dashboard management
+  link(rel='stylesheet', href='dashboard-files/dashboard-management/styles.css')
+  link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.css")
+  link(rel='stylesheet' href='dashboard-files/dashboard-management/pickr/style-overrides.css')
+  script(src='https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js')
+
+block body
+  h1#main-header #[span#roomName #{name.charAt(0).toUpperCase() + name.slice(1)}] dashboard management
+  #socketError No connection!
+  if serviceVersion
+    #serviceVersion v#{serviceVersion}
+  #buttons
+    #pauseBtn.btn.fas.fa-pause
+    #reloadBtn.btn.fas.fa-redo-alt
+    input(type="number" min=1 value=20)#intervalSeconds.btn
+    #color-picker-container
+  #content-container
+    #urlsRoot.container
+      h1.url-header.container-header Frames
+      #urls
+      input#addUrl.text-input(type="text" placeholder="Add new frame URL")
+    #blahRoot.container
+      h1.blah-header.container-header Send blah
+      textarea#blahBox
+      button#send-blah-button.button Send
+    if audioFiles.length
+      #audioButtons.container
+        h1.container-header Play audio
+        #audioButtonContainer
+          each file in audioFiles
+            .button.audio(name=file.file)
+              .button-icon.fas.fa-volume-up
+              .button-text=file.name
+    #voiceBox.container
+      h1.container-header Read out loud
+      input#voiceInput.text-input(type="text" placeholder="Text")
+
+block scripts
+  script(src='dashboard-files/dashboard-management/main.js')

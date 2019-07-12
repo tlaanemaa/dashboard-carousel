@@ -1,0 +1,23 @@
+extends base.pug
+
+block header
+  title #{name.charAt(0).toUpperCase() + name.slice(1)} dashboard
+  link(rel='stylesheet', href='dashboard-files/dashboard/styles.css')
+  if setup
+    link(rel='stylesheet', href='dashboard-files/dashboard/setup.css')
+
+block body
+  #root.animated
+  #slider
+  if serviceVersion
+    #serviceVersion v#{serviceVersion}
+  #buttons
+    #leftBtn.btn.fas.fa-caret-left
+    #pauseBtn.btn.fas.fa-pause
+    #rightBtn.btn.fas.fa-caret-right
+  #blahRoot
+  if setup
+    include ./dashboard-setup.pug
+
+block scripts
+  script(src='dashboard-files/dashboard/main.js')

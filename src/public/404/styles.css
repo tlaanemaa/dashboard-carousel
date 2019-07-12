@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400');
+
+/*
+  CSS variables are defined in the base.pug template file.
+  That way they apply globally
+*/
+:root {
+  /*
+    This is a workaround for a bug in how Safari handles rgba borders with variables
+    https://github.com/ionic-team/ionic/issues/16123
+  */
+  --rgba-border-style: 1px solid rgba(var(--main-fg-color), 0.5);
+}
+
+body {
+  background: rgb(var(--main-bg-color));
+  margin: 0;
+  padding: 0 0 60px 0;
+  border: 0;
+}
+
+.container {
+  color: rgb(var(--main-fg-color));
+  padding: 50px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.under-text {
+  font-style: italic;
+  opacity: 0.6;
+  font-size: 13px;
+}
+
+li + li {
+  margin-top: 5px;
+}
+
+a {
+  color: rgb(var(--main-fg-color));
+  font-family: 'Raleway', sans-serif;
+}
+
+#main-header {
+  margin-top: 0;
+  font-size: 36px;
+}
+
+#serviceVersion {
+  position: fixed;
+  bottom: 5px;
+  left: 5px;
+  font-weight: 400;
+  color: rgba(var(--main-accent-color), 0.2);
+  font-size: 12px;
+  font-family: 'Raleway', sans-serif;
+  z-index: 3;
+}

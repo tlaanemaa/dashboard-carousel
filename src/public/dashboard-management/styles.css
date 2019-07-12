@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400');
+
+/*
+  CSS variables are defined in the base.pug template file.
+  That way they apply globally
+*/
+:root {
+  /*
+    This is a workaround for a bug in how Safari handles rgba borders with variables
+    https://github.com/ionic-team/ionic/issues/16123
+  */
+  --rgba-border-style: 1px solid rgba(var(--main-fg-color), 0.5);
+}
+
+body {
+  background: rgb(var(--main-bg-color));
+  margin: 0;
+  padding: 0 0 60px 0;
+  border: 0;
+}
+
+#socketError {
+  position: fixed;
+  display: flex;
+  bottom: 10px;
+  left: 50%;
+  width: 160px;
+  margin-left: -100px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  height: 20px;
+  background-color: rgb(var(--error-bg-color));
+  color: rgba(var(--main-accent-color), 0.9);
+  font-family: 'Raleway', sans-serif;
+  border-radius: 40px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  transform: translateY(65px);
+  opacity: 0;
+  transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+  z-index: 10;
+}
+
+#socketError.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+#content-container {
+  display: flex;
+  background: rgb(var(--main-bg-color));
+  align-content: stretch;
+  flex-wrap: wrap;
+}
+
+.container {
+  display: inline-flex;
+  padding: 20px 30px;
+  flex-direction: column;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.container-header {
+  color: rgb(var(--main-fg-color));
+  font-family: 'Raleway', sans-serif;
+  padding: 0 20px;
+  font-size: 25px;
+}
+
+#main-header {
+  color: rgb(var(--main-fg-color));
+  font-family: 'Raleway', sans-serif;
+  padding: 30px 50px 0 50px;
+  margin: 0;
+  font-size: 36px;
+}
+
+#roomName {
+  color: rgb(var(--main-fg-color));
+}
+
+.button {
+  padding: 10px;
+  border-radius: 25px;
+  outline: none;
+  border: none;
+  color: rgb(var(--main-bg-color));
+  background-color: rgb(var(--main-fg-color));
+  font-family: 'Raleway', sans-serif;
+  font-size: 15px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.button:hover {
+  background-color: rgb(var(--main-fg-color));
+}
+
+.button:active {
+  box-shadow: inset 0 0 3px 0 rgba(0, 0, 0, 0.8);
+}
+
+#buttons {
+  position: fixed;
+  display: flex;
+  right: 0;
+  bottom: 0;
+  max-width: 100%;
+  padding: 5px;
+  background: rgb(var(--main-bg-color));
+  border-top-left-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  z-index: 2;
+}
+
+.btn {
+  display: inline-flex;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  flex-shrink: 0;
+  flex-grow: 1;
+  border-radius: 40px;
+  align-items: center;
+  justify-content: center;
+  color: rgb(var(--main-fg-color));
+}
+
+.btn + .btn {
+  margin-left: 5px;
+}
+
+.btn:hover {
+  background-color: rgba(var(--main-accent-color), 0.05);
+}
+
+.btn:active {
+  background-color: rgba(var(--main-accent-color), 0.1);
+}
+
+#reloadBtn {
+  transform: rotate(0deg);
+  transition: transform 300ms ease-in-out;
+}
+
+#reloadBtn:hover {
+  transform: rotate(180deg);
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+#intervalSeconds {
+  outline: none;
+  background-color: rgb(var(--main-bg-color));
+  text-align: center;
+  font-size: 17px;
+  color: rgb(var(--main-fg-color));
+  font-family: 'Raleway', sans-serif;
+  border: none;
+}
+
+#intervalSeconds:hover {
+  background-color: rgba(var(--main-accent-color), 0.05);
+}
+
+#urlsRoot {
+  flex-grow: 2;
+}
+
+@media only screen and (min-width: 1200px) {
+  #urlsRoot {
+    max-width: 60%;
+  }
+
+  #blahRoot {
+    min-width: 400px;
+  }
+}
+
+#urls {
+  justify-content: center;
+  flex-direction: column;
+  min-width: 0;
+  margin-bottom: 15px;
+}
+
+.urlBase  {
+  display: flex;
+  min-width: 0;
+}
+
+.urlBase + .urlBase {
+  margin-top: 5px;
+}
+
+.url {
+  display: inline-block;
+  height: 20px;
+  line-height: 20px;
+  margin-right: 5px;
+  cursor: pointer;
+  color: rgba(var(--main-accent-color), 0.8);
+  font-family: 'Raleway', sans-serif;
+  font-size: 15px;
+  border-radius: 40px;
+  padding: 10px 20px;
+  border: 1px solid transparent;
+  flex-grow: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.url:hover {
+  background-color: rgba(var(--main-accent-color), 0.05);
+}
+
+.url:active {
+  background-color: rgba(var(--main-accent-color), 0.1);
+}
+
+.url.active {
+  border: var(--rgba-border-style);
+}
+
+.url-button {
+  display: inline-flex;
+  height: 40px;
+  width: 40px;
+  min-height: 40px;
+  min-width: 40px;
+  margin-left: 5px;
+  border-radius: 40px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  color: rgba(var(--main-accent-color), 0.3);
+  align-items: center;
+  justify-content: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.url-button:hover {
+  background-color: rgba(var(--main-accent-color), 0.05);
+  color: rgba(var(--main-accent-color), 0.7);
+}
+
+.url-button:active {
+  background-color: rgba(var(--main-accent-color), 0.1);
+}
+
+.url-button.active {
+  color: rgba(var(--main-fg-color), 1);
+}
+
+.text-input {
+  background: rgba(var(--main-accent-color), 0.05);
+  border: var(--rgba-border-style);
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 40px;
+  font-size: 15px;
+  color: rgba(var(--main-accent-color), 0.8);
+  font-family: 'Raleway', sans-serif;
+}
+
+.text-input::placeholder {
+  color: rgb(var(--main-fg-color));
+  opacity: 0.3;
+}
+
+#blahRoot {
+  flex-grow: 1;
+}
+
+#blahBox {
+  padding: 15px;
+  min-height: 200px;
+  background: rgba(var(--main-accent-color), 0.05);
+  border: var(--rgba-border-style);
+  border-radius: 25px;
+  outline: none;
+  color: rgba(var(--main-accent-color), 0.8);
+  font-family: 'Raleway', sans-serif;
+  font-size: 15px;
+}
+
+#send-blah-button {
+  margin-top: 10px;
+}
+
+#audioButtonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+#audioButtons .button {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding: 0;
+  padding-right: 20px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+#audioButtons .button-icon {
+  display: inline-flex;
+  height: 40px;
+  width: 40px;
+  font-size: 17px;
+  padding-left: 3px;
+  align-items: center;
+  justify-content: center;
+}
+
+#voiceBox {
+  flex-grow: 1;
+}
+
+#serviceVersion {
+  position: fixed;
+  bottom: 5px;
+  left: 5px;
+  font-weight: 400;
+  color: rgba(var(--main-accent-color), 0.2);
+  font-size: 12px;
+  font-family: 'Raleway', sans-serif;
+  z-index: 3;
+}
+
+#color-picker-container {
+  display: flex;
+  margin-left: 5px;
+  border-radius: 40px;
+  padding: 4px;
+}
+
+#color-picker-container:hover {
+  background-color: rgba(var(--main-accent-color), 0.05);
+}
+
+.pickr {
+  margin: 5px;
+}

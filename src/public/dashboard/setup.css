@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400');
+
+/*
+  CSS variables are defined in the base.pug template file.
+  That way they apply globally
+*/
+
+#setupPage {
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+}
+
+#setupBox {
+  display: flex;
+  position: relative;
+  width: 800px;
+  background: white;
+  border-radius: 20px;
+  color: rgb(var(--main-bg-color));
+  font-family: 'Raleway', sans-serif;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  padding: 30px 40px;
+  flex-direction: column;
+}
+
+#closeSetup {
+  display: flex;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  height: 40px;
+  width: 40px;
+  opacity: 0.3;
+  font-size: 20px;
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transform: rotate(0);
+  transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
+}
+
+#closeSetup:hover {
+  opacity: 0.8;
+  transform: rotate(90deg);
+}
+
+#setupBox .setupTitle {
+  font-size: 25px;
+  margin-top: 10px;
+}
+
+#setupBox li {
+  margin: 10px 0;
+  line-height: 25px;
+}
+
+#setupBox a:visited {
+  color: rgb(var(--main-bg-color));
+}
+
+#setupBox img {
+  display: block;
+  margin: 10px 0;
+}
+
+#setupBox code {
+  color: salmon;
+}
+
+#setupBox i {
+  font-size: 12px;
+  opacity: 0.8;
+}

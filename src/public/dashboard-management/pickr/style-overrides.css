@@ -1,0 +1,43 @@
+.pcr-button {
+  height: 22px !important;
+  width: 22px !important;
+  border-radius: 20px !important;
+  border: var(--rgba-border-style) !important;
+  overflow: hidden !important;
+}
+
+.pcr-button:before {
+  background: transparent !important;
+}
+
+.pcr-app {
+  background: rgb(var(--main-bg-color)) !important;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3) !important;
+}
+
+.pcr-result {
+  border-radius: 20px !important;
+  background: rgba(var(--main-accent-color), 0.05) !important;
+  border: var(--rgba-border-style) !important;
+  outline: none !important;
+  color: rgba(var(--main-accent-color), 0.8) !important;
+}
+
+.pcr-result::placeholder {
+  color: rgb(var(--main-fg-color)) !important;
+  opacity: 0.3 !important;
+}
+
+.pcr-save {
+  border-radius: 20px !important;
+  background-color: rgb(var(--main-fg-color)) !important;
+  color: rgb(var(--main-bg-color)) !important;
+  padding: 5px 10px !important;
+}
+
+.pcr-clear {
+  border-radius: 20px !important;
+  background-color: rgb(var(--main-fg-color)) !important;
+  color: rgb(var(--main-bg-color)) !important;
+  padding: 5px 10px !important;
+}

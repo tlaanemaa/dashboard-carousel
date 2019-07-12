@@ -1,0 +1,19 @@
+#setupPage
+  #setupBox
+    #closeSetup.fas.fa-times
+    h1.setupTitle Setup
+    p This setup guide is written with the assumption that you are using the chrome web browser on your device. If you are using another browser, look up how to do the same operations in that browser
+    ol
+      li
+        a(href='https://chrome.google.com/webstore/detail/ignore-x-frame-headers/gleekbfjekiniecknbkamfmkohkpodhe' target='_blank') Install this extension to allow displaying any website in an iframe
+      li
+        a(href='https://www.howtogeek.com/181911/htg-explains-what-exactly-is-a-mixed-content-warning/' target='_blank') Allow mixed content to allow showing http sites in an iframe
+        img(src='dashboard-files/dashboard-management/images/mixed-content.png')
+        i The shield icon might not appear before you actually try to open a http iframe
+      li To get audio support you need to open #[code chrome://flags/#autoplay-policy] in your TV's browser and set the autoplay-policy flag to #[code No user gesture is required]
+      li Reboot your device if needed
+      li Done! 👍
+
+    i If you don't want to see this setup again, simply open the page without the #[code ?setup] suffix
+  
+  script(src='dashboard-files/dashboard/setup.js')

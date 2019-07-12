@@ -1,0 +1,25 @@
+extends base.pug
+
+block header
+  link(rel='stylesheet', href='dashboard-files/404/styles.css')
+  title 404
+
+block body
+  div.container
+    h1#main-header Nothing here :(
+    div.subhead Perhaps you meant one of those pages?
+    ul
+      li
+        a(href=baseUrl + "/dashboard/" + dummyName)=baseUrl + "/dashboard/" + dummyName
+        span  - Dashboard for room '#{dummyName}'
+      li
+        a(href=baseUrl + "/dashboard/" + dummyName + '?setup')=baseUrl + "/dashboard/" + dummyName + '?setup'
+        span  - Dashboard for room '#{dummyName}' with setup instructions
+      li
+        a(href=baseUrl + "/dashboard-management/" + dummyName)=baseUrl + "/dashboard-management/" + dummyName
+        span  - Dashboard management for room '#{dummyName}'
+
+    div.under-text Replace '#{dummyName}' with the name of your room. If that room doesn't already exist then it will be created automatically
+      
+  if serviceVersion
+    #serviceVersion v#{serviceVersion}
