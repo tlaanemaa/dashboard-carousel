@@ -86,6 +86,3 @@ id_rsa
 
 # Dashboard files
 dashboard-files/
-
-# We prefer to use yarn so there is no need for yarn.lock
-package-lock.json
