@@ -9,7 +9,7 @@ _Requires [node.js](https://nodejs.org/en/download/) v8.0 or later_
 _Since this service relies on sockets, that live in process memory, being matched with http requests, that are stateless, it wont currently work reliably behind a load balancer_
 
 There are a number of ways to start your very own dashboard-carousel server. Perhaps the easiest way is to use it as a CLI tool, that way you only have to install the package, start it and you're done. If you prefer not to run node.js in your environment then you can use the docker container which is equally simple to set up. Lastly, if you already have a server and just want to have dashboards available as a route on that server then just install dashboard-carousel in your project and use it as a router.
-### As a CLI tool (Note: This package is not yet available on npm)
+### As a CLI tool
 Just install the package and run the CLI command
 ```sh
 npm install -g dashboard-carousel
@@ -39,7 +39,7 @@ The created volume will contain two folders:
 * `database` - This is where dashboard carousel keep's its database of rooms and their configurations. Feel free to back this file up if you wish
 
 You can use a bind mount instead of a volume for easier access to the audio folder.
-### As a project dependency (Note: This package is not yet available on npm)
+### As a project dependency
 First, install the package
 ```sh
 npm install --save dashboard-carousel
