@@ -17,7 +17,11 @@
     "url": "ssh://git@github.com:myjar/dashboard-carousel.git"
   },
   "keywords": [
-    "dashboard"
+    "dashboard",
+    "tv",
+    "carousel",
+    "frame",
+    "webpages"
   ],
   "author": "Taavi Laanemaa <taavi.laanemaa@myjar.com>",
   "license": "Apache-2.0",
