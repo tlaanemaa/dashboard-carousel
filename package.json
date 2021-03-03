@@ -34,7 +34,7 @@
     "app-root-path": "^2.2.1",
     "deepmerge": "^3.2.0",
     "express": "^4.16.4",
-    "pug": "^2.0.3",
+    "pug": "^3.0.1",
     "socket.io": "^2.2.0"
   }
 }
