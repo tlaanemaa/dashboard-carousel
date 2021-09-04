@@ -1,4 +1,4 @@
-# Dashboard Carousel [![Build Status](https://travis-ci.org/tlaanemaa/dashboard-carousel.svg?branch=master)](https://travis-ci.org/tlaanemaa/dashboard-carousel)
+# Dashboard Carousel
 _A dashboard to allow showing and managing of different websites on a remote screen_
 
 This project was initially born from the need to show service monitoring metrics on the TVs in our office. It gradually grew from a static HTML page, full of fancy graphs, to a full-stack application with a management interface that allows changing the content remotely and many more new features. By now, its grown into a system that allows displaying, and rotating through, multiple webpages, show arbitrary messages, play sounds, read text out loud and much more. Since there appeared to be quite a bit of interest for this project as a monitoring, or even just social, tool then we decided to share it with the world and open-source it for everyone to use.
