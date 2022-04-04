@@ -4,5 +4,5 @@ const port = process.env.PORT || 8080;
 require('..').listen(
   port,
   // eslint-disable-next-line no-console
-  () => console.log(`Dashboard carousel listening on port ${port}`),
+  () => console.log(`Dashboard carousel listening on http://localhost:${port}`),
 );
